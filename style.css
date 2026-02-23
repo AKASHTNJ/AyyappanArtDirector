@@ -1,0 +1,566 @@
+
+
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: #202020;
+}
+
+/* ================= CINEMATIC BG ================= */
+
+
+/**---------------------------**/
+.bg-art {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 30%, #022a3b 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, #4b072a 0%, transparent 30%),
+         radial-gradient(circle at 60% 50%, #250246 0%, transparent 40%),
+        radial-gradient(circle at 60% 50%, #250246 0%, transparent 40%),
+        radial-gradient(circle at 60% 50%, #111111 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #406e0a 0%, transparent 40%);
+    animation: moveBg 5s infinite alternate;
+}
+
+@keyframes moveBg {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(60deg); }
+}
+
+/*
+.bg{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:linear-gradient(120deg,#000,#0e0e0e,#1a1a1a,#000);
+}
+
+.bg::after{
+    content:"";
+    position:absolute;
+    top:-50%;
+    left:-120%;
+    width:60%;
+    height:200%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.08),transparent);
+    animation:sweep 6s infinite ease-in-out;
+}
+
+@keyframes sweep{
+    0%{left:-120%;}
+    50%{left:120%;}
+    100%{left:120%;}
+}
+ 
+**/
+
+
+/* ================= CONTENT ================= */
+.content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* ================= PHOTO HANG ================= */
+.hang-area {
+    position: relative;
+    display: inline-block;
+    animation: hangDrop 2s ease forwards;
+}
+
+@keyframes hangDrop {
+    from {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.string {
+    width: 2px;
+    height: 120px;
+    background: rgba(255,255,255,0.4);
+    margin: 0 auto;
+}
+
+.photo {
+    width: 260px;
+    height:10%;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-top: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    animation: sway 4s ease-in-out infinite;
+}
+
+.photo img {
+    width: 100%;
+    
+    display: block;
+}
+
+@keyframes sway {
+    0% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+    100% { transform: rotate(-1deg); }
+}
+
+/* ================= FADE TEXT ================= */
+.fade {
+    opacity: 0;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.d1 { animation-delay: 0.6s; }
+.d2 { animation-delay: 1.2s; }
+.d3 { animation-delay: 1.8s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= TYPO ================= */
+h1 {
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+}
+
+.lead {
+    color: #ccc;
+}
+
+/* ================= SCROLL ================= */
+.scroll {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+}
+
+
+
+
+/*======================icons hover ====================*/
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-size: 1.3rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-icons a:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 0 20px rgba(255,255,255,0.35);
+}
+
+/* ===== CARDS ===== */
+.card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+.card i{
+    font-size:2rem;
+    color:#ccc;
+}
+
+.section-title{
+    letter-spacing:2px;
+}
+
+/*=================card link==============*/
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+}
+/*  up comming */
+/*==============floting button hone and backto top=================*/
+
+
+  .floating-btns{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .floating-btns a{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+/*=============================*/
+/* Main card for achivement  */
+.award-box{
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    overflow: hidden;
+    max-width: 850px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+/* Image side */
+.award-img{
+   /* background-image: url('../assets/img/SANDAKARI.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    min-height: 350px;
+    
+}
+
+/* Content side */
+.award-content{
+    padding: 40px;
+}
+.badge-year{
+    background: gold;
+    color: #000;
+}
+
+/*----------------------====================-----------00000000000000000---*/
+/* ================================
+   GLOBAL RESPONSIVE FIXES
+================================ */
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container breathing space */
+.content {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* ================================
+   HERO / INTRO SECTION
+================================ */
+.hang-area {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.photo img {
+  width: 100%;
+  max-width: 260px;
+}
+
+/* Typography scaling */
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.lead {
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+}
+
+p {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+}
+
+/* ================================
+   AWARDS SECTION
+================================ */
+.award-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.award-content {
+  padding: 1.5rem;
+}
+
+/* Stack image & text on small screens */
+@media (max-width: 767px) {
+  .award-img,
+  .award-content {
+    text-align: center;
+  }
+
+  .award-content ul {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+/* ================================
+   PROJECT CARDS
+================================ */
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 2rem;
+}
+
+/* ================================
+   SKILLS GRID
+================================ */
+@media (max-width: 575px) {
+  .card-body h5 {
+    font-size: 0.95rem;
+  }
+}
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.floating-footer {
+  padding: 2.5rem 1rem;
+}
+
+@media (max-width: 767px) {
+  footer .col-md-4 {
+    text-align: center;
+  }
+}
+
+/* ================================
+   DEVICE BREAKPOINT TUNING
+================================ */
+
+/* Very Small Devices (≤360px) */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .photo img {
+    max-width: 220px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .photo img {
+    max-width: 240px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/************---------===========addd==================***/
+/* ================================
+   GLOBAL RESPONSIVE SAFETY
+================================ */
+
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   PAGE TITLE & INTRO
+================================ */
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+p {
+  font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+}
+
+/* Center text nicely on small screens */
+@media (max-width: 767px) {
+  .container > div {
+    text-align: center;
+  }
+}
+
+/* ================================
+   VIDEO CARDS
+================================ */
+.video-card {
+  border: none;
+  background: transparent;
+}
+
+/* Ensure videos fill column */
+.video-card video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Card body spacing control */
+.video-card .card-body {
+  padding: 1.5rem;
+}
+
+/* Remove excessive <br> effect on small devices */
+@media (max-width: 767px) {
+  .video-card .card-body br {
+    display: none;
+  }
+}
+
+/* Stack video & content vertically on mobiles */
+@media (max-width: 767px) {
+  .video-card .row {
+    flex-direction: column;
+  }
+}
+
+/* ================================
+   TEXT ALIGNMENT
+================================ */
+@media (max-width: 767px) {
+  .card-text,
+  .card-title {
+    text-align: center;
+  }
+}
+
+/* ================================
+   FLOATING BUTTONS
+================================ */
+.floating-btns {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+@media (max-width: 575px) {
+  .floating-btns a {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ================================
+   SOCIAL ICONS
+================================ */
+.social-icons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+}
+
+/* ================================
+   FOOTER RESPONSIVENESS
+================================ */
+.floating-footer {
+  padding: 2.5rem 1rem;
+}
+
+@media (max-width: 767px) {
+  footer .col-md-4 {
+    text-align: center;
+  }
+}
+
+/* ================================
+   DEVICE-SPECIFIC TUNING
+================================ */
+
+/* Very Small Phones */
+@media (max-width: 360px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .video-card .card-body {
+    padding: 1.2rem;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+}
